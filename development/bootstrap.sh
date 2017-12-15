@@ -78,10 +78,6 @@ mysql --defaults-file="config/my.cnf"      \
       --port="$DATABASE_PORT"              \
       --execute="source temp/bootstrap.sql" &> log/mysql.error.log
 
-echo "Bootstrapping the database schema and tables."
-
-(cd .. && npm install)
-
 echo "Stopping the database server."
 
 kill -TERM $MYSQLD_PID
